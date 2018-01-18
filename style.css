@@ -1,19 +1,46 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
 body{
 
 }
+/*----------------------------------------------------*/
 header{
   background-color: #000000;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  color: white;
 }
 #hamburger{
-  width: 5%;
+  width: 15%;
 }
-nav.a{
+/*~~~~~~~~~~~~~~~~~~~~~~~~*/
+aside{
+  position: fixed;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 100%;
+  font-size: 20px;
+}
+a{
   text-decoration: none;
-  color: #ffffff;
+  color: black;
 }
 #navigation{
   visibility: hidden;
 }
+/*~~~~~~~~~~~~~~~~~~~~~~~~*/
+h1{
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+}
+/*----------------------------------------------------*/
 section{
   background-color: #9d9994;
 }
