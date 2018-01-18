@@ -33,6 +33,9 @@ aside{
 h3{
   font-size: 20px;
 }
+span{
+  display: flex;
+}
 a{
   text-decoration: none;
   color: black;
