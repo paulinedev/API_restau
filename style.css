@@ -2,17 +2,18 @@ body{
 
 }
 header{
-
+  background-color: #000000;
 }
 nav{
-
+  text-decoration: none;
+  color: #ffffff;
 }
 section{
-
+  background-color: #9d9994;
 }
 article{
-
+  background-color: #ffffff;
 }
 img{
-  width: 50%;
+  width: 75%;
 }
