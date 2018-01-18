@@ -5,21 +5,22 @@ header{
   background-color: #000000;
 }
 #hamburger{
-  display: inline;
+  width: 5%;
 }
-nav{
+nav.a{
   text-decoration: none;
   color: #ffffff;
 }
 #navigation{
-  display: none;
+  visibility: hidden;
 }
 section{
   background-color: #9d9994;
 }
 article{
   background-color: #ffffff;
+  padding: 10px;
 }
-img{
-  width: 75%;
+article.img{
+  width: 40%;
 }

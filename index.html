@@ -12,9 +12,7 @@
 </head>
 <body>
   <header>
-    <div id="hamburger">
-      <img src="hamburger.png" alt="hamburger">
-    </div>
+    <img id="hamburger" src="images/hamburger.png" alt="hamburger" onclick="navi()">
     <nav id="navigation" role="navigation">
       <a href="#">Menu</a>
       <a href="#">Photographier un plat</a>
@@ -46,18 +44,6 @@
 
   <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="service-worker.js"></script>
-
-  <script type="text/javascript">
-    var navi = document.getElementById(hamburger);
-    // quand l'utilisateur clic sur div3, la fonction ma_fonction se déclanche
-    navi.addEventListener("click", hamburger, false);
-    function navi(){
-      var elem = document.getElementById('hamburger');
-      elem.style.display = 'none';
-      var elem2 = document.getElementById('navigation');
-      elem2.style.display = 'inline';
-  };
-</script>
 </body>
 
 </html>
