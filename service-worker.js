@@ -4,7 +4,7 @@ const CACHE_NAME = 'App-Cache';
 const RESOURCES_TO_PRELOAD = [
 	'index.html',
 	'style.css',
-  'icon.png',
+  'images/icon.png',
 	'app.js',
   'service-worker.js',
 	'manifest.json'
