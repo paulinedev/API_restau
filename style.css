@@ -4,9 +4,15 @@ body{
 header{
   background-color: #000000;
 }
+#hamburger{
+  display: inline;
+}
 nav{
   text-decoration: none;
   color: #ffffff;
+}
+#navigation{
+  display: none;
 }
 section{
   background-color: #9d9994;
