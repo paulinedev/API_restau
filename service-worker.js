@@ -1,5 +1,5 @@
 // Service Worker
-
+//mettre en cache des fichiers
 const CACHE_NAME = 'App-Cache';
 const RESOURCES_TO_PRELOAD = [
 	'index.html',
