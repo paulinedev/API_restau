@@ -8,10 +8,13 @@ body{
 /*----------------------------------------------------*/
 header{
   background-color: #000000;
-  height: 150px;
+  height: 50px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   color: white;
+  padding-right: 1%;
 }
 #hamburger{
   width: 15%;
@@ -26,6 +29,7 @@ aside{
   width: 25%;
   height: 100%;
   font-size: 20px;
+  padding: 1%;
 }
 a{
   text-decoration: none;
@@ -38,16 +42,25 @@ a{
 h1{
   display: flex;
   flex-direction: row;
-  align-self: flex-end;
+  align-content: flex-end;
 }
 /*----------------------------------------------------*/
 section{
   background-color: #9d9994;
+  display: flec;
+  justify-content: center;
+}
+h3{
+  display: flex;
+  align-content: center;
 }
 article{
   background-color: #ffffff;
   padding: 10px;
 }
-article.img{
-  width: 40%;
+.ima{
+  width: 100%;
+}
+.bob{
+  width: 100%;
 }

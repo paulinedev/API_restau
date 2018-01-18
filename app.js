@@ -14,9 +14,6 @@ if('serviceWorker' in navigator) {
 var ham = document.getElementById('hamburger');
 //ham.addEventListener("click", navi, false);
 function navi(){
-  console.log('io');
-  var elem = document.getElementById('hamburger');
-  elem.style.visibility = 'hidden';
   var elem2 = document.getElementById('navigation');
   elem2.style.visibility = 'visible';
 };
