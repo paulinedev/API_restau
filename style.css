@@ -34,13 +34,14 @@ h3{
   font-size: 20px;
 }
 span{
-  display: flex;
+  margin-right: 15px;
 }
 a{
   text-decoration: none;
   color: black;
   font-size: 15px;
   margin: 5px;
+  max-width: 100%;
 }
 #navigation{
 

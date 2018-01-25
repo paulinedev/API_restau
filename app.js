@@ -14,6 +14,13 @@ if('serviceWorker' in navigator) {
 var ham = document.getElementById('hamburger');
 //ham.addEventListener("click", navi, false);
 function navi(){
+  var elem = document.getElementById('navigation');
+  elem.style.visibility = 'visible';
+};
+//SORTIR DU MENU
+var exit = document.getElementById('exit');
+exit.addEventListener("click", outside, false);
+function outside(){
   var elem2 = document.getElementById('navigation');
-  elem2.style.visibility = 'visible';
+  elem2.style.visibility = 'hidden';
 };
