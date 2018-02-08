@@ -44,8 +44,8 @@ a{
   max-width: 100%;
 }
 #navigation{
-
-  visibility: hidden;
+  display: none;
+  /* visibility: hidden; */
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~*/
 h1{

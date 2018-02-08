@@ -11,19 +11,25 @@ if('serviceWorker' in navigator) {
   }
 }
 //MENU HAMBURGER
-var ham = document.getElementById('hamburger');
-//ham.addEventListener("click", navi, false);
-function navi(){
-  var elem = document.getElementById('navigation');
-  elem.style.visibility = 'visible';
-};
+// var ham = document.getElementById('hamburger');
+// //ham.addEventListener("click", navi, false);
+// function navi(){
+//   var elem = document.getElementById('navigation');
+//   elem.style.visibility = 'visible';
+// };
+$('#hamburger').click(function(){
+    $('#navigation').fadeIn();
+});
 //SORTIR DU MENU
-var exit = document.getElementById('exit');
-exit.addEventListener("click", outside, false);
-function outside(){
-  var elem2 = document.getElementById('navigation');
-  elem2.style.visibility = 'hidden';
-};
+// var exit = document.getElementById('exit');
+// exit.addEventListener("click", outside, false);
+// function outside(){
+//   var elem2 = document.getElementById('navigation');
+//   elem2.style.visibility = 'hidden';
+// };
+$('#exit').click(function(){
+    $('#navigation').fadeOut(400);
+});
 
 var menu = {
   plat1:"burger",
