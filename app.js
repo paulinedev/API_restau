@@ -32,4 +32,4 @@ var menu = {
     dessert1:"tarte_fraise",
   },
 };
-alert(menu.dessert.dessert1);
+console.log(menu.dessert.dessert1);
