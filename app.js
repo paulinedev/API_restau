@@ -24,3 +24,12 @@ function outside(){
   var elem2 = document.getElementById('navigation');
   elem2.style.visibility = 'hidden';
 };
+
+var menu = {
+  plat1:"burger",
+  plat2:"bobun",
+  dessert:{
+    dessert1:"tarte_fraise",
+  },
+};
+alert(menu.dessert.dessert1);
