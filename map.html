@@ -8,12 +8,16 @@
   <meta name="theme-color">
 
   <title> API </title>
+
+  <link rel="stylesheet" href="leaflet/leaflet.css" />
   <link href="style.css" type="text/css" rel="stylesheet"/>
   <link href="tw-16-emoji.css" type="text/css" rel="stylesheet"/>
   <link rel="manifest" href="manifest.json"/>
-
 </head>
 <body>
+
+  <!-- MENU -->
+
   <aside id="navigation" role="navigation">
     <h3>Menu</h3>
         <br/>
@@ -29,27 +33,23 @@
     <a href="#"> <span class="tw tw-runner"></span> Manger rapidement </a>
     <a href="#"> <span class="tw tw-star2"></span> Nouveau </a>
   </aside>
+
+  <!-- HEADER -->
+
   <header>
     <img id="hamburger" src="images/hamburger.png" alt="hamburger">
       <!-- <img id="hamburger" src="images/hamburger.png" alt="hamburger" onclick="navi()"> -->
 
     <h1> Restauplus </h1>
   </header>
-  <section id="exit">
-    <article> <p> Ici vous allez trouver de quoi vous restaurer ! </p> </article>
-    <article class="nouvBurg">
-      <h2> Nouveau burger ! </h2>
-      <img src="images/nouvBurger.jpg" alt="nouvBurger" class="ima"/>
-      <p> Paul, le 02/01/2018 </p>
-    </article>
-    <article class="bobun">
-      <h2> Nouveau burger ! </h2>
-      <img src="images/bobun.jpg" alt="bobun" class="ima"/>
-      <p> Alice, le 03/01/2018 </p>
-    </article>
-  </section>
 
+  <!-- CORPUS -->
 
+  <div id="map"></div>
+
+  <!-- SCRIPT -->
+
+  <script src="leaflet/leaflet.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="service-worker.js"></script>

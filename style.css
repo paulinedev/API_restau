@@ -8,7 +8,7 @@ body{
 /*----------------------------------------------------*/
 header{
   background-color: #000000;
-  height: 50px;
+  height: 6vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -70,4 +70,9 @@ article{
 }
 .ima{
   width: 100%;
+}
+/*----------------------------------------------------*/
+
+#map{
+  height: 500px;  
 }
