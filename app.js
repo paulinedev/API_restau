@@ -41,45 +41,64 @@ var menu = {
 console.log(menu.dessert.dessert1);
 
 //MAP Geolocalisé
-
- var map = L.map('map');
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-     maxZoom: 19,
-     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-   maxZoom: 18
- }).addTo(map);
-
-   map.locate({setView: true, maxZoom: 16});
-   function onLocationFound(e) {
-   var radius = e.accuracy / 2;
-
-   L.marker(e.latlng).addTo(map)
-       .bindPopup("Vous êtes à au moins " + radius + " mètres de ce point").openPopup();
-
-   L.circle(e.latlng, radius).addTo(map);
-}
-
-map.on('locationfound', onLocationFound);
-function onLocationError(e) {
-   alert(e.message);
-}
-
-map.on('locationerror', onLocationError);
-
-// var map = L.map('map').setView([48.866667, 2.333333], 13);
 //
-// L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-//     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-// }).addTo(map);
+//  var map = L.map('map');
 //
-// L.marker([48.866667, 2.333333]).addTo(map)
-//     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-//     .openPopup();
+// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//      maxZoom: 19,
+//      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+//    maxZoom: 18
+//  }).addTo(map);
 //
-//     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-//   attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-//   maxZoom: 18,
-//   id: 'mapbox.streets',
-//   accessToken: 'your.mapbox.access.token'
-// }).addTo(mymap);
+//    map.locate({setView: true, maxZoom: 16});
+//    function onLocationFound(e) {
+//    var radius = e.accuracy / 2;
+//
+//    L.marker(e.latlng).addTo(map)
+//        .bindPopup("Vous êtes à au moins " + radius + " mètres de ce point").openPopup();
+//
+//    L.circle(e.latlng, radius).addTo(map);
+// }
+//
+// map.on('locationfound', onLocationFound);
+// function onLocationError(e) {
+//    alert(e.message);
+// }
+//
+// map.on('locationerror', onLocationError);
+
+//MAP
+
+var map = L.map('map').setView([48.866667, 2.333333], 13);
+
+L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+  console.log('test');
+
+L.marker([48.8563663, 2.308171600000037]).addTo(map)
+    .bindPopup('Yo !')
+    .openPopup();
+
+//    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+//  attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+//  maxZoom: 18,
+//  id: 'mapbox.streets',
+//  accessToken: 'your.mapbox.access.token'
+//}).addTo(mymap);
+
+
+//UserLocation
+
+function success(pos) {
+  var crd = pos.coords;
+  map.setView([pos.coords.latitude, pos.coords.longitude], 13);
+};
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+};
+
+navigator.geolocation.getCurrentPosition(success, error)
+
+//api
