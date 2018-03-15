@@ -69,16 +69,7 @@ console.log(menu.dessert.dessert1);
 
 //MAP
 
-var map = L.map('map').setView([48.866667, 2.333333], 13);
 
-L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-  console.log('test');
-
-L.marker([48.8563663, 2.308171600000037]).addTo(map)
-    .bindPopup('Yo !')
-    .openPopup();
 
 //    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 //  attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -90,15 +81,32 @@ L.marker([48.8563663, 2.308171600000037]).addTo(map)
 
 //UserLocation
 
-function success(pos) {
-  var crd = pos.coords;
-  map.setView([pos.coords.latitude, pos.coords.longitude], 13);
+function success(position) {
+  // var crd = position.coords;
+  // map.setView([position.coords.latitude, position.coords.longitude], 13);
+  var userLat = position.coords.latitude;
+  var userLng = position.coords.longitude;
+  var map = L.map('map').setView([userLat, userLng], 13);
+
+  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+    console.log('test');
+
+  L.marker([userLat, userLng]).addTo(map)
+      .bindPopup('Yo !')
+      .openPopup();
+      console.log('pr');
 };
 
 function error(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
 };
 
-navigator.geolocation.getCurrentPosition(success, error)
-
+navigator.geolocation.getCurrentPosition(success, error);
 //api
+var url =  "https://api.foursquare.com/v2/venues/explore?ll=48.856151,2.307911&section=food&radius=500&venuePhotos=1&client_id=ZREIDKU0KAD1QO41XZRNBK30ZZTNJRZXCTDEBAUWQLI0JKVA&client_secret=C2RVJ5KNN2P1L0PF4HAMVYGPPWMVQ4M5JO4QXBKNY0G5QZE4&v=20180101";
+$.getJSON(url, function(data) {
+  console.log(data.response.groups[0].items[2].venue.location.lat);
+  console.log(data.response.groups[0].items[2].venue.location.lng);
+});
