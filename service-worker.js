@@ -3,8 +3,14 @@
 const CACHE_NAME = 'App-Cache';
 const RESOURCES_TO_PRELOAD = [
 	'index.html',
+	'map.html',
 	'style.css',
-  'images/icon.png',
+	'tw-16-emoji.css',
+	'sheet_twitter_16.png',
+	'images/icon.png',
+	'images/bobun.jpg',
+	'images/hamburger.png',
+	'images/nouvBurger.jpg',
 	'app.js',
   'service-worker.js',
 	'manifest.json'
