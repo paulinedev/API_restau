@@ -107,7 +107,38 @@ navigator.geolocation.getCurrentPosition(success, error);
 //api
 var url =  "https://api.foursquare.com/v2/venues/explore?ll=" + userLat + "," + userlng + "&section=food&radius=500&venuePhotos=1&client_id=ZREIDKU0KAD1QO41XZRNBK30ZZTNJRZXCTDEBAUWQLI0JKVA&client_secret=C2RVJ5KNN2P1L0PF4HAMVYGPPWMVQ4M5JO4QXBKNY0G5QZE4&v=20180101";
 $.getJSON(url, function(data) {
-  console.log(data.response.groups[0].items[2].venue.name);
-    console.log(data.response.groups[0].items[2].venue.location.lat);
-  console.log(data.response.groups[0].items[2].venue.location.lng);
+  console.log(data.response.groups[0].items[2]);
+  console.log(data.response.groups[0].items[2].venue.location.coords.lat);
+  console.log(data.response.groups[0].items[2].venue.location.coords.lng);
+  $.each(data, function (key, val) {
+    // selon ce que vous récupérez de l'API, le code ci-dessous pourrait être à adapter
+
+    // je récupère le bloc venue
+    venue = val.venue;
+
+    // je peux accéder aux infos qui m'intéressent, comme la latitude
+    // regardez bien la documentation de Foursquare pour plus d'infos
+    latitude = venue.location.lat;
+    console.log(latitude);
+    longitude = venue.location.lng;
+    name = venue.name;
+
+    // et j'affiche les marqueurs sur la carte avec les infos de la venue
+    L.marker([latitude, longitude]).addTo(map)
+        .bindPopup(restoName)
+        .openPopup();
+  });
+  // //Le Petit Cler
+  // L.marker([48.857483149509896, 2.3060342848592015]).addTo(map)
+  // .bindPopup('Le Petit Cler')
+  // .openPopup();
+  // //Boucle pour
+  // for (var i = 0; i < items[i].length; i++) {
+  //   var restoName = data.response.groups[0].items[i].venue.name;
+  //   var restoLat = data.response.groups[0].items[i].venue.location.lat;
+  //   var restoLng = data.response.groups[0].items[i].venue.location.lng;
+  //   L.marker([restoLat, restoLng]).addTo(map)
+  //   .bindPopup(restoName)
+  //   .openPopup();
+  // };
 });
